@@ -1,0 +1,7 @@
+name: "pull-exactly"
+version: "0.1.0"
+usage: "`helm pull` but stricter"
+description: |-
+  Performs `helm pull` but ensure that the version string is exactly what you specified
+ignoreFlags: false
+command: "$HELM_PLUGIN_DIR/pull-exactly.sh"
