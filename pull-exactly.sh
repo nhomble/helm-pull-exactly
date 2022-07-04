@@ -33,6 +33,8 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
+[[ -z "$VERSION" ]] && exit 1
+
 PULL_ARGS=$(printf " %s" "${ARGS[@]}")
 PLUGIN_ARGS=$(printf " %s" "${MY_ARGS[@]}")
 
