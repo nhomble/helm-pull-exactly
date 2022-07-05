@@ -41,11 +41,11 @@ done
 
 eval "${MY_ARGS[@]}"
 
-CHART_NAME=$(ls $TEMP_DIR)
+CHART_NAME=$(ls "$TEMP_DIR")
 
 [[ -z "$CHART_NAME" ]] && debug "Failed to pull down chart with command" "${MY_ARGS[@]}" && exit 1
 
-CHART_VERSION=$(cat ${TEMP_DIR}/${CHART_NAME}/Chart.yaml | grep ^version | sed 's/version: //g')
+CHART_VERSION=$(cat "${TEMP_DIR}"/"${CHART_NAME}"/Chart.yaml | grep ^version | sed 's/version: //g')
 
 [[ "$CHART_VERSION" != "$VERSION" ]] && debug "Versions do not match: given version=${VERSION} found version=${CHART_VERSION}" && exit 1
 
